@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <style>
+      /* Styles CSS pour la page */
+      body {
+        background-color: #ffffff;
+      }
+      button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Bouton qui déclenche le jeu -->
+    <button id="game-button">Changer la couleur de fond</button>
+    
+    <script>
+      // Fonction qui change la couleur de fond de la page
+      function changeBackgroundColor() {
+        // Génère une couleur aléatoire en hexadécimal
+        var randomColor = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+        
+        // Applique la couleur de fond à la page
+        document.body.style.backgroundColor = randomColor;
+      }
+      
+      // Récupère le bouton du jeu
+      var gameButton = document.getElementById("game-button");
+      
+      // Ajoute un gestionnaire d'événement pour exécuter la fonction de changement de couleur
+      // lorsque le bouton est cliqué
+      gameButton.addEventListener("click", changeBackgroundColor);
+    </script>
+  </body>
+</html>
